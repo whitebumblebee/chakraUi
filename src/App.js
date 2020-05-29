@@ -1,12 +1,22 @@
 import React from 'react';
+// import ReactDOM from 'react-dom';
 import './App.css';
+import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import customTheme from './theme';
 
-const  App = () => {
+
+const  App = ({ children }) => {
   return (
     <div className="App">
-      <h2>Hello from React!!</h2>
+      <ThemeProvider theme={customTheme}>
+        <CSSReset />
+        {children}
+      </ThemeProvider>
     </div>
   );
 }
 
 export default App;
+
+
+// Use at the root of your app
